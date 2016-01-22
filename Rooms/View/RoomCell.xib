@@ -14,16 +14,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                 <subviews>
                     <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lrs-7G-rwH">
-                        <rect key="frame" x="63" y="72" width="55" height="36"/>
+                        <rect key="frame" x="8" y="72" width="164" height="36"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsY-4I-3MU">
-                                <rect key="frame" x="0.0" y="0.0" width="55" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsY-4I-3MU">
+                                <rect key="frame" x="0.0" y="0.0" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 devices" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7D-yg-jaa">
-                                <rect key="frame" x="0.0" y="21" width="55" height="15"/>
+                                <rect key="frame" x="0.0" y="21" width="164" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -90,7 +90,8 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Fmt-4z-wah" secondAttribute="trailing" id="L9x-da-bEc"/>
-                <constraint firstItem="Lrs-7G-rwH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Vd1-uN-FQH"/>
+                <constraint firstAttribute="trailing" secondItem="Lrs-7G-rwH" secondAttribute="trailing" constant="8" id="fRu-Ny-eYf"/>
+                <constraint firstItem="Lrs-7G-rwH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="mim-YK-yMW"/>
                 <constraint firstItem="Fmt-4z-wah" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rFt-xH-HOM"/>
                 <constraint firstAttribute="bottom" secondItem="Fmt-4z-wah" secondAttribute="bottom" constant="-60" id="xus-qW-QrP"/>
                 <constraint firstItem="Lrs-7G-rwH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="zpQ-hq-IGY"/>

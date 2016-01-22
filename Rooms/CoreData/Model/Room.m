@@ -36,71 +36,41 @@
         [self updateRoom:room fromList:list];
     }
         
-    [self saveInContext];
+    [self saveInContext:context];
     
     return room;
 }
 
 
 
-+ (Room *)updateRoom:(Room *)room fromList:(NSDictionary *)list {
+
++ (void)updateRoom:(Room *)room fromList:(NSDictionary *)list {
     
     room.name = list[@"name"];
     room.roomID = list[@"id"];
-    
-    return room;
 }
 
 
 + (void)currentRoom:(Room *)room addDeviceWithName:(NSString *)name {
     
+    NSManagedObjectContext *context = [CDManager sharedManager].managedObjectContext;
     [room addDevicesObject:[Device withName:name]];
-    [self saveInContext];
+    [self saveInContext:context];
 }
 
 
-+ (void)removeRoomAtIndex:(NSUInteger)index {
+
++ (void)remove:(Room *)room {
     
-    NSError *error = nil;
     NSManagedObjectContext *context = [CDManager sharedManager].managedObjectContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:NSStringFromClass(self)];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    NSArray *result = [context executeFetchRequest:request error:&error];
-    
-    [context deleteObject:result[index]];
-    
-    [self saveInContext];
+    [context deleteObject:room];
+    [self saveInContext:context];
 }
 
 
-+ (Room *)currentRoom {
++ (void)saveInContext:(NSManagedObjectContext *)context {
     
     NSError *error = nil;
-    NSManagedObjectContext *context = [CDManager sharedManager].managedObjectContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:NSStringFromClass(self)];
-    NSArray *rooms = [context executeFetchRequest:request error:&error];
-    
-    return rooms.lastObject;
-}
-
-
-+ (Room *)roomAtIndex:(NSUInteger)index {
-    
-    NSError *error = nil;
-    NSManagedObjectContext *context = [CDManager sharedManager].managedObjectContext;
-    NSFetchRequest *request = [[NSFetchRequest alloc]initWithEntityName:NSStringFromClass(self)];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    NSArray *rooms = [context executeFetchRequest:request error:&error];
-    
-    return rooms[index];
-}
-
-
-+ (void)saveInContext {
-    
-    NSError *error = nil;
-    NSManagedObjectContext *context = [CDManager sharedManager].managedObjectContext;
-    
     if (![context save:&error]) {
         NSLog(@"ERROR save context: %@", error.description);
     }

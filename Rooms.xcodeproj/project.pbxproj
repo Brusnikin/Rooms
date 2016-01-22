@@ -122,7 +122,6 @@
 		F578A0A51C50D6DD00D29BC6 /* Rooms */ = {
 			isa = PBXGroup;
 			children = (
-				F5FD9F8C1C519B1500E8DF51 /* Extension */,
 				F5FD9F251C50E6E200E8DF51 /* Model */,
 				F5FD9F001C50D92600E8DF51 /* View */,
 				F5FD9EFF1C50D91100E8DF51 /* ViewController */,
@@ -248,13 +247,6 @@
 			);
 			name = NSHash;
 			path = Rooms;
-			sourceTree = "<group>";
-		};
-		F5FD9F8C1C519B1500E8DF51 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

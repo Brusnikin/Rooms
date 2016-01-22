@@ -19,9 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (Room *)addNewRoomFromList:(NSDictionary *)list;
 + (void)currentRoom:(Room *)room addDeviceWithName:(NSString *)name;
-+ (void)removeRoomAtIndex:(NSUInteger)index;
-+ (Room *)currentRoom;
-+ (Room *)roomAtIndex:(NSUInteger)index;
++ (void)remove:(Room *)room;
 
 @end
 

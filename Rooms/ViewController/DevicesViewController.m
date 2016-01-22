@@ -97,11 +97,13 @@
                                                handler:^(UIAlertAction * action) {
                                                    //Do Some action here
                                                    
-                                                   [Room currentRoom:self.currentRoom addDeviceWithName:deviceName];
-                                                   [self.tableView reloadData];
+                                                   if (deviceName.length) {
+                                                       [Room currentRoom:self.currentRoom addDeviceWithName:deviceName];
+                                                       [self.tableView reloadData];
+                                                   }
                                                }];
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                    handler:^(UIAlertAction * action) {
                                                        [alert dismissViewControllerAnimated:YES completion:nil];
                                                    }];

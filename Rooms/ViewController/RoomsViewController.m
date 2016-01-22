@@ -23,6 +23,7 @@
 
 @property (nonatomic) RoomDataSource *roomDataSource;
 @property (nonatomic) UIAlertController *alertController;
+@property (nonatomic) NSArray *rooms;
 
 @end
 
@@ -42,16 +43,17 @@
     }
     
     //check for exist rooms
-    if (![Room currentRoom]) {
-        [self getRoomList];
+    if (!self.rooms.count) {
+        
+        HTTPClient *client = [HTTPClient new];
+        [client getRoomListFromServer:^(BOOL result) {
+            //
+        } onFailure:^(NSError *error) {
+            //
+        }];
     }
-    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
@@ -59,16 +61,12 @@
     [self.collectionView reloadData];
 }
 
-- (void)getRoomList {
-    
-    HTTPClient *client = [HTTPClient new];
-    
-    [client getRoomListFromServer:^(BOOL result) {
-        //
-    } onFailure:^(NSError *error) {
-        //
-    }];
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
+
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -92,7 +90,7 @@
     
     if ([[collectionView cellForItemAtIndexPath:indexPath].reuseIdentifier isEqualToString:roomCellID]) {
         
-        Room *room = [Room roomAtIndex:indexPath.item];
+        Room *room = self.rooms[indexPath.item];
         
         DevicesViewController *deviceController = [self.storyboard instantiateViewControllerWithIdentifier:@"DevicesViewController"];
         deviceController.title = room.name;
@@ -134,14 +132,66 @@
 #pragma mark - RoomCellDelegate
 
 - (void)renameRoom:(UIButton *)sender fromCell:(RoomCell *)cell {
-
+    
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    [self renameRoom:indexPath];
 }
-
 
 - (void)deleteRoom:(UIButton *)sender fromCell:(RoomCell *)cell {
     
-    NSUInteger index = [self.collectionView indexPathForCell:cell].item;
-    [Room removeRoomAtIndex:index];
+    NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+    [self deleteRoom:indexPath];
+}
+
+
+
+
+#pragma mark - UIAlertController
+
+
+
+- (void)renameRoom:(NSIndexPath *)indexPath {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Rename room" message:@"Enter new name" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                   handler:^(UIAlertAction * action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    
+    UIAlertAction *rename = [UIAlertAction actionWithTitle:@"Rename" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       Room *room = self.rooms[indexPath.item];
+                                                       [Room addNewRoomFromList:@{@"name" : roomName, @"id" : room.roomID}];
+                                                   }];
+    
+    [alert addAction:cancel];
+    [alert addAction:rename];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.delegate = self;
+        textField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+    }];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+- (void)deleteRoom:(NSIndexPath *)indexPath {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Delete room" message:@"Do you really want to delete?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                               handler:^(UIAlertAction * action) {
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                               }];
+    
+    UIAlertAction *delete = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive
+                                                   handler:^(UIAlertAction * action) {
+                                                       [Room remove:self.rooms[indexPath.item]];
+                                                   }];
+    
+    [alert addAction:cancel];
+    [alert addAction:delete];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
@@ -152,15 +202,12 @@
     
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
-                                                   //Do Some action here
-                                                   
                                                    if (roomName.length) {
                                                        [Room addNewRoomFromList:@{@"name" : roomName, @"id" : [roomName MD5]}];
                                                    }
-                                                   
                                                }];
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
                                                    handler:^(UIAlertAction * action) {
                                                        [alert dismissViewControllerAnimated:YES completion:nil];
                                                    }];
@@ -182,6 +229,14 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     roomName = textField.text;
     
+}
+
+
+#pragma mark - Setters & Getters
+
+- (NSArray *)rooms {
+    NSArray *sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+    return _rooms = [self.roomDataSource.fetchedResultsController.fetchedObjects sortedArrayUsingDescriptors:sortDescriptors];
 }
 
 /*

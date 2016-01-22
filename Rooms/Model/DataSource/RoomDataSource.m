@@ -43,6 +43,8 @@ NSString * const addCellID = @"addCell";
 #pragma mark - UICollectionViewDataSource
 
 
+
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return self.fetchedResultsController.sections.count;
 }
@@ -51,6 +53,7 @@ NSString * const addCellID = @"addCell";
     id <NSFetchedResultsSectionInfo> section = self.fetchedResultsController.sections[sectionIndex];
     return !section.numberOfObjects ? 1 : section.numberOfObjects + 1;
 }
+
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -84,11 +87,12 @@ NSString * const addCellID = @"addCell";
         return _fetchedResultsController;
     }
     
+    NSManagedObjectContext *context = [CDManager sharedManager].managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Room"];
     fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     fetchRequest.fetchBatchSize = 10;
     
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[CDManager sharedManager].managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
     _fetchedResultsController.delegate = self;
     
     NSError *error = nil;
@@ -103,7 +107,7 @@ NSString * const addCellID = @"addCell";
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController*)controller {
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [self.collectionView reloadData];
 }
 
