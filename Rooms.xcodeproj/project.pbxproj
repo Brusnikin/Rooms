@@ -1,0 +1,512 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F578A0A81C50D6DD00D29BC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F578A0A71C50D6DD00D29BC6 /* main.m */; };
+		F578A0AB1C50D6DD00D29BC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F578A0AA1C50D6DD00D29BC6 /* AppDelegate.m */; };
+		F578A0B11C50D6DD00D29BC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F578A0AF1C50D6DD00D29BC6 /* Main.storyboard */; };
+		F578A0B41C50D6DD00D29BC6 /* Rooms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F578A0B21C50D6DD00D29BC6 /* Rooms.xcdatamodeld */; };
+		F578A0B61C50D6DD00D29BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F578A0B51C50D6DD00D29BC6 /* Assets.xcassets */; };
+		F578A0B91C50D6DD00D29BC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F578A0B71C50D6DD00D29BC6 /* LaunchScreen.storyboard */; };
+		F5FD9F051C50D9A700E8DF51 /* CDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F041C50D9A700E8DF51 /* CDManager.m */; };
+		F5FD9F101C50DDA500E8DF51 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F0A1C50DDA500E8DF51 /* Device.m */; };
+		F5FD9F121C50DDA500E8DF51 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F0E1C50DDA500E8DF51 /* Room.m */; };
+		F5FD9F151C50DEF500E8DF51 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F141C50DEF500E8DF51 /* RoomsViewController.m */; };
+		F5FD9F181C50DFCC00E8DF51 /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F171C50DFCC00E8DF51 /* DevicesViewController.m */; };
+		F5FD9F1E1C50E29C00E8DF51 /* RoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F1C1C50E29C00E8DF51 /* RoomCell.m */; };
+		F5FD9F1F1C50E29C00E8DF51 /* RoomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FD9F1D1C50E29C00E8DF51 /* RoomCell.xib */; };
+		F5FD9F231C50E4F500E8DF51 /* addCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F211C50E4F500E8DF51 /* addCell.m */; };
+		F5FD9F241C50E4F500E8DF51 /* addCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5FD9F221C50E4F500E8DF51 /* addCell.xib */; };
+		F5FD9F2D1C50E78D00E8DF51 /* RoomDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F2C1C50E78D00E8DF51 /* RoomDataSource.m */; };
+		F5FD9F701C50FD3600E8DF51 /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F6F1C50FD3600E8DF51 /* HTTPClient.m */; };
+		F5FD9F781C51248E00E8DF51 /* Room+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F751C51248D00E8DF51 /* Room+CoreDataProperties.m */; };
+		F5FD9F791C51248E00E8DF51 /* Device+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F771C51248D00E8DF51 /* Device+CoreDataProperties.m */; };
+		F5FD9F831C5147C000E8DF51 /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F801C5147C000E8DF51 /* NSString+NSHash.m */; };
+		F5FD9F841C5147C000E8DF51 /* NSData+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD9F821C5147C000E8DF51 /* NSData+NSHash.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		534939DD610FB3FC9150E9EC /* Pods-Rooms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rooms.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rooms/Pods-Rooms.release.xcconfig"; sourceTree = "<group>"; };
+		B59C12C5A028EDBCFEFC29D6 /* Pods-Rooms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rooms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rooms/Pods-Rooms.debug.xcconfig"; sourceTree = "<group>"; };
+		F578A0A31C50D6DD00D29BC6 /* Rooms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rooms.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F578A0A71C50D6DD00D29BC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F578A0A91C50D6DD00D29BC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F578A0AA1C50D6DD00D29BC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F578A0B01C50D6DD00D29BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F578A0B31C50D6DD00D29BC6 /* Rooms.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rooms.xcdatamodel; sourceTree = "<group>"; };
+		F578A0B51C50D6DD00D29BC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Rooms/Assets.xcassets; sourceTree = "<group>"; };
+		F578A0B81C50D6DD00D29BC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F578A0BA1C50D6DD00D29BC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5FD9F031C50D9A700E8DF51 /* CDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDManager.h; path = CDManager/CDManager.h; sourceTree = "<group>"; };
+		F5FD9F041C50D9A700E8DF51 /* CDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDManager.m; path = CDManager/CDManager.m; sourceTree = "<group>"; };
+		F5FD9F091C50DDA500E8DF51 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = CoreData/Model/Device.h; sourceTree = "<group>"; };
+		F5FD9F0A1C50DDA500E8DF51 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Device.m; path = CoreData/Model/Device.m; sourceTree = "<group>"; };
+		F5FD9F0D1C50DDA500E8DF51 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = CoreData/Model/Room.h; sourceTree = "<group>"; };
+		F5FD9F0E1C50DDA500E8DF51 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = CoreData/Model/Room.m; sourceTree = "<group>"; };
+		F5FD9F131C50DEF500E8DF51 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomsViewController.h; path = ViewController/RoomsViewController.h; sourceTree = "<group>"; };
+		F5FD9F141C50DEF500E8DF51 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomsViewController.m; path = ViewController/RoomsViewController.m; sourceTree = "<group>"; };
+		F5FD9F161C50DFCC00E8DF51 /* DevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DevicesViewController.h; path = ViewController/DevicesViewController.h; sourceTree = "<group>"; };
+		F5FD9F171C50DFCC00E8DF51 /* DevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DevicesViewController.m; path = ViewController/DevicesViewController.m; sourceTree = "<group>"; };
+		F5FD9F1B1C50E29C00E8DF51 /* RoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomCell.h; path = View/RoomCell.h; sourceTree = "<group>"; };
+		F5FD9F1C1C50E29C00E8DF51 /* RoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomCell.m; path = View/RoomCell.m; sourceTree = "<group>"; };
+		F5FD9F1D1C50E29C00E8DF51 /* RoomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RoomCell.xib; path = View/RoomCell.xib; sourceTree = "<group>"; };
+		F5FD9F201C50E4F500E8DF51 /* addCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = addCell.h; path = View/addCell.h; sourceTree = "<group>"; };
+		F5FD9F211C50E4F500E8DF51 /* addCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = addCell.m; path = View/addCell.m; sourceTree = "<group>"; };
+		F5FD9F221C50E4F500E8DF51 /* addCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = addCell.xib; path = View/addCell.xib; sourceTree = "<group>"; };
+		F5FD9F2B1C50E78D00E8DF51 /* RoomDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoomDataSource.h; path = Model/DataSource/RoomDataSource.h; sourceTree = "<group>"; };
+		F5FD9F2C1C50E78D00E8DF51 /* RoomDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoomDataSource.m; path = Model/DataSource/RoomDataSource.m; sourceTree = "<group>"; };
+		F5FD9F6E1C50FD3600E8DF51 /* HTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPClient.h; path = Model/API/HTTPClient.h; sourceTree = "<group>"; };
+		F5FD9F6F1C50FD3600E8DF51 /* HTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPClient.m; path = Model/API/HTTPClient.m; sourceTree = "<group>"; };
+		F5FD9F741C51248D00E8DF51 /* Room+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Room+CoreDataProperties.h"; path = "CoreData/Model/Room+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F5FD9F751C51248D00E8DF51 /* Room+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Room+CoreDataProperties.m"; path = "CoreData/Model/Room+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F5FD9F761C51248D00E8DF51 /* Device+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Device+CoreDataProperties.h"; path = "CoreData/Model/Device+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F5FD9F771C51248D00E8DF51 /* Device+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Device+CoreDataProperties.m"; path = "CoreData/Model/Device+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F5FD9F7F1C5147C000E8DF51 /* NSString+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSHash.h"; sourceTree = "<group>"; };
+		F5FD9F801C5147C000E8DF51 /* NSString+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSHash.m"; sourceTree = "<group>"; };
+		F5FD9F811C5147C000E8DF51 /* NSData+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSHash.h"; sourceTree = "<group>"; };
+		F5FD9F821C5147C000E8DF51 /* NSData+NSHash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSHash.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F578A0A01C50D6DD00D29BC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D21C1000FFCE1B3488D0FE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64BF055B026D526CD8A245CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B59C12C5A028EDBCFEFC29D6 /* Pods-Rooms.debug.xcconfig */,
+				534939DD610FB3FC9150E9EC /* Pods-Rooms.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F578A09A1C50D6DD00D29BC6 = {
+			isa = PBXGroup;
+			children = (
+				F578A0A51C50D6DD00D29BC6 /* Rooms */,
+				F578A0B51C50D6DD00D29BC6 /* Assets.xcassets */,
+				F5FD9F7E1C5147AB00E8DF51 /* NSHash */,
+				F578A0A41C50D6DD00D29BC6 /* Products */,
+				64BF055B026D526CD8A245CB /* Pods */,
+				3D21C1000FFCE1B3488D0FE1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F578A0A41C50D6DD00D29BC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F578A0A31C50D6DD00D29BC6 /* Rooms.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F578A0A51C50D6DD00D29BC6 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F8C1C519B1500E8DF51 /* Extension */,
+				F5FD9F251C50E6E200E8DF51 /* Model */,
+				F5FD9F001C50D92600E8DF51 /* View */,
+				F5FD9EFF1C50D91100E8DF51 /* ViewController */,
+				F5FD9F011C50D93C00E8DF51 /* CoreData */,
+				F578A0A61C50D6DD00D29BC6 /* Supporting Files */,
+			);
+			path = Rooms;
+			sourceTree = "<group>";
+		};
+		F578A0A61C50D6DD00D29BC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F578A0A91C50D6DD00D29BC6 /* AppDelegate.h */,
+				F578A0AA1C50D6DD00D29BC6 /* AppDelegate.m */,
+				F578A0BA1C50D6DD00D29BC6 /* Info.plist */,
+				F578A0A71C50D6DD00D29BC6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5FD9EFF1C50D91100E8DF51 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F131C50DEF500E8DF51 /* RoomsViewController.h */,
+				F5FD9F141C50DEF500E8DF51 /* RoomsViewController.m */,
+				F5FD9F161C50DFCC00E8DF51 /* DevicesViewController.h */,
+				F5FD9F171C50DFCC00E8DF51 /* DevicesViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		F5FD9F001C50D92600E8DF51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F578A0AF1C50D6DD00D29BC6 /* Main.storyboard */,
+				F578A0B71C50D6DD00D29BC6 /* LaunchScreen.storyboard */,
+				F5FD9F571C50EDF200E8DF51 /* Cell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F5FD9F011C50D93C00E8DF51 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F578A0B21C50D6DD00D29BC6 /* Rooms.xcdatamodeld */,
+				F5FD9F061C50DD4700E8DF51 /* Model */,
+				F5FD9F021C50D95B00E8DF51 /* CDManager */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		F5FD9F021C50D95B00E8DF51 /* CDManager */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F031C50D9A700E8DF51 /* CDManager.h */,
+				F5FD9F041C50D9A700E8DF51 /* CDManager.m */,
+			);
+			name = CDManager;
+			sourceTree = "<group>";
+		};
+		F5FD9F061C50DD4700E8DF51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F0D1C50DDA500E8DF51 /* Room.h */,
+				F5FD9F0E1C50DDA500E8DF51 /* Room.m */,
+				F5FD9F091C50DDA500E8DF51 /* Device.h */,
+				F5FD9F0A1C50DDA500E8DF51 /* Device.m */,
+				F5FD9F741C51248D00E8DF51 /* Room+CoreDataProperties.h */,
+				F5FD9F751C51248D00E8DF51 /* Room+CoreDataProperties.m */,
+				F5FD9F761C51248D00E8DF51 /* Device+CoreDataProperties.h */,
+				F5FD9F771C51248D00E8DF51 /* Device+CoreDataProperties.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F5FD9F251C50E6E200E8DF51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F6D1C50F86F00E8DF51 /* API */,
+				F5FD9F2A1C50E74D00E8DF51 /* DataSource */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F5FD9F2A1C50E74D00E8DF51 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F2B1C50E78D00E8DF51 /* RoomDataSource.h */,
+				F5FD9F2C1C50E78D00E8DF51 /* RoomDataSource.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		F5FD9F571C50EDF200E8DF51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F1B1C50E29C00E8DF51 /* RoomCell.h */,
+				F5FD9F1C1C50E29C00E8DF51 /* RoomCell.m */,
+				F5FD9F1D1C50E29C00E8DF51 /* RoomCell.xib */,
+				F5FD9F201C50E4F500E8DF51 /* addCell.h */,
+				F5FD9F211C50E4F500E8DF51 /* addCell.m */,
+				F5FD9F221C50E4F500E8DF51 /* addCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		F5FD9F6D1C50F86F00E8DF51 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F6E1C50FD3600E8DF51 /* HTTPClient.h */,
+				F5FD9F6F1C50FD3600E8DF51 /* HTTPClient.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		F5FD9F7E1C5147AB00E8DF51 /* NSHash */ = {
+			isa = PBXGroup;
+			children = (
+				F5FD9F7F1C5147C000E8DF51 /* NSString+NSHash.h */,
+				F5FD9F801C5147C000E8DF51 /* NSString+NSHash.m */,
+				F5FD9F811C5147C000E8DF51 /* NSData+NSHash.h */,
+				F5FD9F821C5147C000E8DF51 /* NSData+NSHash.m */,
+			);
+			name = NSHash;
+			path = Rooms;
+			sourceTree = "<group>";
+		};
+		F5FD9F8C1C519B1500E8DF51 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F578A0A21C50D6DD00D29BC6 /* Rooms */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F578A0BD1C50D6DD00D29BC6 /* Build configuration list for PBXNativeTarget "Rooms" */;
+			buildPhases = (
+				F578A09F1C50D6DD00D29BC6 /* Sources */,
+				F578A0A01C50D6DD00D29BC6 /* Frameworks */,
+				F578A0A11C50D6DD00D29BC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Rooms;
+			productName = Rooms;
+			productReference = F578A0A31C50D6DD00D29BC6 /* Rooms.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F578A09B1C50D6DD00D29BC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Brusnikinapps;
+				TargetAttributes = {
+					F578A0A21C50D6DD00D29BC6 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = F578A09E1C50D6DD00D29BC6 /* Build configuration list for PBXProject "Rooms" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F578A09A1C50D6DD00D29BC6;
+			productRefGroup = F578A0A41C50D6DD00D29BC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F578A0A21C50D6DD00D29BC6 /* Rooms */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F578A0A11C50D6DD00D29BC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F578A0B91C50D6DD00D29BC6 /* LaunchScreen.storyboard in Resources */,
+				F578A0B61C50D6DD00D29BC6 /* Assets.xcassets in Resources */,
+				F5FD9F241C50E4F500E8DF51 /* addCell.xib in Resources */,
+				F5FD9F1F1C50E29C00E8DF51 /* RoomCell.xib in Resources */,
+				F578A0B11C50D6DD00D29BC6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F578A09F1C50D6DD00D29BC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5FD9F781C51248E00E8DF51 /* Room+CoreDataProperties.m in Sources */,
+				F578A0AB1C50D6DD00D29BC6 /* AppDelegate.m in Sources */,
+				F578A0B41C50D6DD00D29BC6 /* Rooms.xcdatamodeld in Sources */,
+				F5FD9F121C50DDA500E8DF51 /* Room.m in Sources */,
+				F5FD9F2D1C50E78D00E8DF51 /* RoomDataSource.m in Sources */,
+				F5FD9F841C5147C000E8DF51 /* NSData+NSHash.m in Sources */,
+				F5FD9F701C50FD3600E8DF51 /* HTTPClient.m in Sources */,
+				F5FD9F231C50E4F500E8DF51 /* addCell.m in Sources */,
+				F578A0A81C50D6DD00D29BC6 /* main.m in Sources */,
+				F5FD9F831C5147C000E8DF51 /* NSString+NSHash.m in Sources */,
+				F5FD9F151C50DEF500E8DF51 /* RoomsViewController.m in Sources */,
+				F5FD9F101C50DDA500E8DF51 /* Device.m in Sources */,
+				F5FD9F181C50DFCC00E8DF51 /* DevicesViewController.m in Sources */,
+				F5FD9F791C51248E00E8DF51 /* Device+CoreDataProperties.m in Sources */,
+				F5FD9F1E1C50E29C00E8DF51 /* RoomCell.m in Sources */,
+				F5FD9F051C50D9A700E8DF51 /* CDManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F578A0AF1C50D6DD00D29BC6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F578A0B01C50D6DD00D29BC6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F578A0B71C50D6DD00D29BC6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F578A0B81C50D6DD00D29BC6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F578A0BB1C50D6DD00D29BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F578A0BC1C50D6DD00D29BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F578A0BE1C50D6DD00D29BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Rooms/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.Brusnikinapps.Rooms;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F578A0BF1C50D6DD00D29BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Rooms/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.Brusnikinapps.Rooms;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F578A09E1C50D6DD00D29BC6 /* Build configuration list for PBXProject "Rooms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F578A0BB1C50D6DD00D29BC6 /* Debug */,
+				F578A0BC1C50D6DD00D29BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F578A0BD1C50D6DD00D29BC6 /* Build configuration list for PBXNativeTarget "Rooms" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F578A0BE1C50D6DD00D29BC6 /* Debug */,
+				F578A0BF1C50D6DD00D29BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F578A0B21C50D6DD00D29BC6 /* Rooms.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F578A0B31C50D6DD00D29BC6 /* Rooms.xcdatamodel */,
+			);
+			currentVersion = F578A0B31C50D6DD00D29BC6 /* Rooms.xcdatamodel */;
+			path = Rooms.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F578A09B1C50D6DD00D29BC6 /* Project object */;
+}
