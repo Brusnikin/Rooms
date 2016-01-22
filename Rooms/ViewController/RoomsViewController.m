@@ -134,29 +134,14 @@
 #pragma mark - RoomCellDelegate
 
 - (void)renameRoom:(UIButton *)sender fromCell:(RoomCell *)cell {
-    
-    //__weak typeof(self) weakSelf = self;
-    
-   [UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseOut animations:^{
-       cell.extraMenuPosition.constant = -60.0;
-       [cell layoutIfNeeded];
-   } completion:^(BOOL finished) {
-       
-   }];
+
 }
 
 
 - (void)deleteRoom:(UIButton *)sender fromCell:(RoomCell *)cell {
     
-    [UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseOut animations:^{
-        cell.extraMenuPosition.constant = -60.0;
-        [cell layoutIfNeeded];
-        
-    } completion:^(BOOL finished) {
-        
-        NSUInteger index = [self.collectionView indexPathForCell:cell].item;
-        [Room removeRoomAtIndex:index];
-    }];
+    NSUInteger index = [self.collectionView indexPathForCell:cell].item;
+    [Room removeRoomAtIndex:index];
 }
 
 
@@ -168,7 +153,11 @@
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    //Do Some action here
-                                                   [Room addNewRoomFromList:@{@"name" : roomName, @"id" : [roomName MD5]}];
+                                                   
+                                                   if (roomName.length) {
+                                                       [Room addNewRoomFromList:@{@"name" : roomName, @"id" : [roomName MD5]}];
+                                                   }
+                                                   
                                                }];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault

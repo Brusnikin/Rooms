@@ -12,15 +12,34 @@
 
 
 - (IBAction)renameRoom:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(renameRoom:fromCell:)]) {
-        [self.delegate renameRoom:sender fromCell:self];
-    }
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.extraMenuPosition.constant = -60.0;
+        [self layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        if ([weakSelf.delegate respondsToSelector:@selector(renameRoom:fromCell:)]) {
+            [weakSelf.delegate renameRoom:sender fromCell:weakSelf];
+        }
+    }];
+    
+    
 }
 
 - (IBAction)deleteRoom:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(deleteRoom:fromCell:)]) {
-        [self.delegate deleteRoom:sender fromCell:self];
-    }
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [UIView animateWithDuration:0.25 delay:0.25 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.extraMenuPosition.constant = -60.0;
+        [self layoutIfNeeded];
+        
+    } completion:^(BOOL finished) {
+        if ([weakSelf.delegate respondsToSelector:@selector(deleteRoom:fromCell:)]) {
+            [weakSelf.delegate deleteRoom:sender fromCell:weakSelf];
+        }
+    }];
 }
 
 
